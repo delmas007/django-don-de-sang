@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href=" {% static 'css/bootstrap.min.css' %} ">
+    <script src=" {% static 'js/bootstrap.bundle.js' %}" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Work+Sans&display=swap" rel="stylesheet">
+</head>
+<body class="d-flex flex-column h-100"  style="background-color:#F0FFFF ;font-family: 'Lato', sans-serif;
+font-family: 'Work Sans', sans-serif;">
+
+<main class="container  mt-4 ">
+    <article class="h1 text-info fw-bold text-center mt-4">
+        {{request.user.hopital}}
+    </article>
+    <article class="row " style="margin-top: 50px;">
+        <div class="col-4 offset-4 ">
+            <form method="POST" class="">
+                {% csrf_token %}
+                <div class="form-check form-switch position-relative  " style="margin-left: 120px;">
+                    <!-- {{form.as_p}} -->
+                    <label class="form-check-label text-info position-absolute top-0 start-0" for="permanent">A+:</label>
+                    {{form.Aplus}}
+                 </div>
+                 <div class="form-check form-switch position-relative mt-3" style="margin-left: 120px;">
+                    <!-- {{form.as_p}} -->
+                    <label class="form-check-label text-info position-absolute top-0 start-0" for="permanent">A-:</label>
+                    {{form.Amoins}}
+                 </div>
+                 <div class="form-check form-switch position-relative mt-3" style="margin-left: 120px;">
+                    <!-- {{form.as_p}} -->
+                    <label class="form-check-label text-info position-absolute top-0 start-0" for="permanent">B+:</label>
+                    {{form.Bplus}}
+                 </div>
+                 <div class="form-check form-switch position-relative mt-3" style="margin-left: 120px;">
+                    <!-- {{form.as_p}} -->
+                    <label class="form-check-label text-info position-absolute top-0 start-0" for="permanent">B-:</label>
+                    {{form.Bmoins}}
+                 </div>
+                 <div class="form-check form-switch position-relative mt-3" style="margin-left: 120px;">
+                    <!-- {{form.as_p}} -->
+                    <label class="form-check-label text-info position-absolute top-0 start-0" for="permanent">O+:</label>
+                    {{form.Oplus}}
+                 </div>
+                 <div class="form-check form-switch position-relative mt-3" style="margin-left: 120px;">
+                    <!-- {{form.as_p}} -->
+                    <label class="form-check-label text-info position-absolute top-0 start-0" for="permanent">O-:</label>
+                    {{form.Omoins}}
+                 </div>
+                 <div class="form-check form-switch position-relative mt-3" style="margin-left: 120px;">
+                    <!-- {{form.as_p}} -->
+                    <label class="form-check-label text-info position-absolute top-0 start-0" for="permanent">AB+:</label>
+                    {{form.ABplus}}
+                 </div>
+                 <div class="form-check form-switch position-relative mt-3" style="margin-left: 120px;">
+                    <!-- {{form.as_p}} -->
+                    <label class="form-check-label text-info position-absolute top-0 start-0" for="permanent">AB-:</label>
+                    {{form.ABmoins}}
+                 </div>
+                 <div class="position-relative " style="margin-top: 50px;">
+                    <button class="w-5 btn btn-outline-info position-absolute top-0 start-0" type="submit"> modifier</button>
+                    <button  class="w-5 btn btn-outline-info position-absolute top-0 end-0" style="margin-left: 150px;"> 
+                        <a style="text-decoration:none" class="text-info" href="{% url 'base:Deconnexion'%}">Deconnexion</a></button>
+            
+                 </div>
+                
+            </form>
+        </div>
+        
+    </article>
+</main>
+        
+    
+    
+</body>
+</html>

@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr" class="h-100">
+<head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=" {% static 'css/bootstrap.min.css' %} ">
+    <script src=" {% static 'js/bootstrap.bundle.js' %}" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Work+Sans&display=swap" rel="stylesheet">
+    {% block title %}
+    {% endblock %}
+</head>
+<body class="d-flex flex-column h-100"  style="background-color:#F0FFFF ;font-family: 'Lato', sans-serif;
+      font-family: 'Work Sans', sans-serif;">
+    <header class="p-3  sticky-top" style="background-color: #F5F5F5 ; ">
+        <div class="container">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <!-- <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none m-e-4"> -->
+              <!-- <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href='images/goutte-de-sang.png'></use></svg> -->
+              <!-- <img src="image/goutte-de-sang.png"  alt="image-sang">
+            </a> -->
+            <div class="navbar-brand text-start">
+              <img src="{% static 'image/goutte-de-sang.png' %}"  alt="image-sang">
+            </div>
+    
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+              {% if request.user.is_authenticated %}
+              <li><a href="{% url 'acceuil'%}" class="nav-link px-2 " style="color: #DC143C;">Accueil</a></li>
+              <li><a href="{% url 'affiche:test'%}" class="nav-link px-2 " style="color: #DC143C;">Autoévaluation</a></li>
+              <li><a href="{% url 'affiche:site'%}" class="nav-link px-2 " style="color: #DC143C;">Les lieux de don</a></li>
+              <li><a href="{% url 'base:demande'%}" class="nav-link px-2 " style="color: #DC143C;">demande de sang</a></li>
+              <li><a href="{% url 'base:hopital'%}" class="nav-link px-2 " style="color: #DC143C;">Disponibilité des rhésus</a></li>
+              <li><a href="{% url 'affiche:pourquoi'%}" class="nav-link px-2 " style="color: #DC143C;">Pourquoi faire un don</a></li>
+              <li><a href="{% url 'affiche:information'%}" class="nav-link px-2 " style="color: #DC143C;">Informations</a></li>
+              {% else %}
+              <li><a href="{% url 'acceuil'%}" class="nav-link px-2 " style="color: #DC143C; margin-left: 100px;">Accueil</a></li>
+              <li><a href="{% url 'affiche:site'%}" class="nav-link px-2 " style="color: #DC143C ;margin-left: 30px;">Les lieux de don</a></li>
+              <li><a href="{% url 'affiche:pourquoi'%}" class="nav-link px-2 " style="color: #DC143C ;margin-left: 30px;">Pourquoi faire un don</a></li>
+              <li><a href="{% url 'affiche:information'%}" class="nav-link px-2 " style="color: #DC143C ;margin-left: 30px;">Informations</a></li>
+              {% endif %}
+            </ul>
+    
+            <!-- <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+              <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+            </form> -->
+    
+            <div class="text-end ">
+              
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#00BFFF" class="bi bi-person-circle" viewBox="0 0 16 16">
+                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                </svg>
+              {% if request.user.is_authenticated %}
+              <button type="button" class="btn btn-outline-info"> <a style="text-decoration:none" class="text-info" href="{% url 'base:Deconnexion'%}">Deconnexion</a></button>
+              {% else %}
+              <button type="button" class="btn btn-outline-info me-2 ms-3"> <a style="text-decoration:none" class="text-info" href="{% url 'base:connexion'%}">Connexion</a></button>
+              <button type="button" class="btn btn-outline-info"> <a style="text-decoration:none" class="text-info" href="{% url 'base:inscription'%}">Inscription</a></button>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </header>
+      
+
+      {% block content %}
+      {% endblock %}
+      
+
+
+        <footer class="footer mt-auto py-3 " style="background-color:#F5F5F5 ;">
+          <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            {% if request.user.is_authenticated %}
+            <li><a href="{% url 'acceuil'%}" class="nav-link px-2 " style="color: #DC143C;">Accueil</a></li>
+            <li><a href="{% url 'affiche:test'%}" class="nav-link px-2 " style="color: #DC143C;">Autoévaluation</a></li>
+            <li><a href="{% url 'affiche:site'%}" class="nav-link px-2 " style="color: #DC143C;">Les lieux de don</a></li>
+            <li><a href="#" class="nav-link px-2 " style="color: #DC143C;">demande de sang</a></li>
+            <li><a href="{% url 'base:hopital'%}" class="nav-link px-2 " style="color: #DC143C;">Disponibilité des rhésus</a></li>
+            <li><a href="{% url 'affiche:pourquoi'%}" class="nav-link px-2 " style="color: #DC143C;">Pourquoi faire un don</a></li>
+            <li><a href="{% url 'affiche:information'%}" class="nav-link px-2 " style="color: #DC143C;">Informations</a></li>
+            {% else %}
+            <li><a href="{% url 'acceuil'%}" class="nav-link px-2 " style="color: #DC143C;">Accueil</a></li>
+            <li><a href="{% url 'affiche:site'%}" class="nav-link px-2 " style="color: #DC143C;">Les lieux de don</a></li>
+            <li><a href="{% url 'affiche:pourquoi'%}" class="nav-link px-2 " style="color: #DC143C;">Pourquoi faire un don</a></li>
+            <li><a href="{% url 'affiche:information'%}" class="nav-link px-2 " style="color: #DC143C;">Informations</a></li>
+            {% endif %}
+          </ul>
+          <p class="text-center text-info">Copyright Holder © 2021 - All Right Reserved - Designed By Angaman</p>
+        </footer>
+</body>
+</html>

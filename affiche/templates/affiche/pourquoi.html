@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block title %}
+    <title>Information sur le don</title>
+    {% endblock %}
+
+  {% block content%}
+    <figure class="figure img-fluid" >
+        <img src="{% static 'image/11.jpg' %}" alt="" style="height: 500px ;width: 1579px;">
+    </figure>
+
+    <main class="container ">
+        <section class="row " >
+            <main class="col-4 offset-4 " >
+                <section class="d-flex justify-content-center mt-4 text-info h4 " style="background-color: #F5F5F5;">
+                    POURQUOI DONNER ?
+                </section>
+            </main>
+        </section>
+    </main> 
+
+    <main class="container-fluid mt-5">
+        <section class="row " >
+            <article class="col-6  ">
+                <main class="ms-3 ">
+                   <p class="h3 d-flex justify-content-center " style="color: #DC143C;"> DON DE SANG :
+                    LES BESOINS SONT QUOTIDIENS.
+                    </p>
+                    <p class="h2 text-start">
+                        Chaque jour, nous avons besoin de sang pour accompagner une femme qui accouche,
+                         une personne accidentée de la route, un malade atteint de cancer... Les situations
+                          sont aussi variées que régulières. L’acte volontaire et bénévole de donner son
+                           sang est donc irremplaçable. Vous êtes irremplaçables !
+                    </p>
+                    
+                </main>
+            </article>
+            <article class="col-6  ">
+                <figure class="d-flex justify-content-center">
+                    <img src="{% static 'image/12.jpg' %}" alt="sang" class="img-fluid rounded img-thumbnail" style="height: 100% ;width: 70%">
+                </figure>
+            </article>
+        </section>
+    </main>
+
+    <main class=" d-flex justify-content-center" >
+        <section class="  mt-4 text-info h4 border border-danger rounded-pill mb-5 " style=" height: 200px ;width: 800px">
+            <p class="d-flex justify-content-center pt-3 px-3">VOTRE SANG A LE POUVOIR DE SOIGNER.</p>
+            <p class="text-center pb-3 px-3 ">
+                Grâce aux dons, les personnes qui en ont besoin sont soignées directement via la transfusion sanguine
+                 ou indirectement par l’utilisation des médicaments dérivés du sang issu du don de plasma.
+            </p> 
+            
+        </section>
+    </main>
+
+    <main class="container my-4">
+        <section class="row">
+            <article class="col-4">
+                <div class="card" style="width: 800; height: 400;">
+                    <img src="{% static 'image/13.jpg' %}" class="card-img-top" alt="img">
+                    <div class="card-body">
+                        <h5 class="card-title">Cancers</h5>
+                        <p class="card-text">
+                            Les malades qui sont sous chimiothérapie ont besoin régulièrement de nombreuses poches de sang,
+                             de plasma et de plaquettes pour les aider à faire face aux effets indésirables du traitement.
+                        </p>
+                    </div>
+                </div>
+            </article>
+            <article class="col-4 offset-4">
+                <div class="card" style="width: 800; height: 400;">
+                    <img src="{% static 'image/14.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Hémorragies</h5>
+                        <p class="card-text">
+                            En cas d’hémorragies, lors d’interventions chirurgicales ou d’accidents de la route par exemple,
+                             les besoins en produits sanguins sont urgents et importants.
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+
+    <main class="container my-5">
+        <section class="row">
+            <article class="col-4">
+                <div class="card" style="width: 800; height: 400;">
+                    <img src="{% static 'image/15.jpg' %}" class="card-img-top" alt="img">
+                    <div class="card-body">
+                        <h5 class="card-title">Maladies du sang </h5>
+                        <p class="card-text">
+                            La leucémie ou le lymphome sont les maladies du sang les plus répandues.
+                             Le traitement de ces maladies nécessite la transfusion de globules rouges et/ou de plaquettes,
+                             selon les cas, et requiert pour ces transfusions très régulières de grandes quantités de produits sanguins.
+                        </p>
+                    </div>
+                </div>
+            </article>
+            <article class="col-4 offset-4">
+                <div class="card" style="width: 800; height: 400;">
+                    <img src="{% static 'image/16.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Drépanocytose</h5>
+                        <p class="card-text">
+                            Décelée tôt, cette maladie génétique héréditaire touche beaucoup d’enfants,
+                             plus particulièrement d’origine antillaise ou d’Afrique subsaharienne. 
+                             Elle se caractérise par une anomalie du sang qui nécessite que celui-ci soit souvent renouvelé.
+                             Certains malades doivent recevoir une transfusion tous les 15 jours.
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <main class=" d-flex justify-content-center" >
+        <section class="  mt-4 text-info h4 border border-danger rounded mb-5 " style=" height: 200px ;width: 800px">
+            <p class="d-flex justify-content-center pt-3 px-3">REJOIGNEZ-NOUS POUR AIDER CELLES ET CEUX QUI EN ONT BESOIN.</p>
+            <p class="text-center pb-3 px-3 ">
+                Au-delà de donner votre sang,
+                 vous pouvez être à nos côtés de plusieurs manières.
+                  Alors partagez votre pouvoir et partageons notre engagement !  
+            </p> 
+            
+        </section>
+    </main>
+
+    <main class="container my-5">
+        <section class="row">
+            <article class="col-4">
+                <div class="card" style="width: 800; height: 400;">
+                    <img src="{% static 'image/17.jpg' %}" class="card-img-top" alt="img">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Devenir bénévole  
+                        </h5>
+                        <p class="card-text">
+                            Nous avons besoin de personnes sur le terrain, au plus près des citoyens, 
+                            pour des missions variées. Que
+                             ce soit pour rejoindre une association ou pour aider de manière ponctuelle
+                             , le bénévolat à l’EFS est 
+                             toujours libre et enrichissant.
+                        </p>
+                    </div>
+                </div>
+            </article>
+            <article class="col-4 offset-4">
+                <div class="card" style="width: 800; height: 400;">
+                    <img src="{% static 'image/18.png' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Parlez-en autour de vous :</h5>
+                        <p class="card-text">
+                            à votre famille, à vos amis, sur votre lieu de travail par exemple. 
+                            C’est aussi et déjà un acte solidaire.
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    {% endblock %}
